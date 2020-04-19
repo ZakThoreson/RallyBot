@@ -1,2 +1,0 @@
-#This should be private - update with the token for your server. 
-[include Bot Token]

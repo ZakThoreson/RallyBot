@@ -40,22 +40,4 @@ async def builds_dps(ctx):
     embed.add_field(name="Renegade", value="http://en.gw2skills.net/editor/?PmiAIZldQIMHKi1QSsHCi9RgsASgFzU57G-zRJYnRF/ZkpUIdVgGvEhpHA-e ", inline=True)
     await self.bot.say(embed=embed)
 
-
-#Detect a request for builds. Allows for DPS / Support
-#@client.event
-#async def on_message(message):
-    #Does not allow the bot to respond to itself
-#    if message.author == client.user:
-        return
-
-    #Output all available commands
-#    if messgage.content.includes('!commands')
-#        ctx.send("")
-#    #Return EK meta DPS builds
-#    if message.content.includes('!builds-dps')
-#
-#    #Return EK meta support builds
-#    if message.content.includes('!builds-support')
-
-
 client.run('your token here')
