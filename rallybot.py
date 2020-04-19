@@ -24,6 +24,9 @@ async def on_message(message):
     if message.author == client.user:
         return
 
+    if message.content == '!test':
+        await message.channel.send('I am working')
+
     if message.content == '!help':
         embed=discord.Embed(title='Help Menu', description="Current commands supported by the bot", color=0xeee657)
         embed.add_field(name="!builds_support", description="Prints the current EK Support Builds", inline=False)
