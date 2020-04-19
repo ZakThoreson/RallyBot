@@ -29,7 +29,7 @@ async def on_message(message):
         embed.add_field(name="!builds_support", description="Prints the current EK Support Builds", inline=False)
         embed.add_field(name="!builds_dps", description="Prints the current EK DPS Builds", inline=False)
 
-    if message.content == '!builds_dps'
+    if message.content == '!builds_dps':
         embed=discord.Embed(title="DPS Builds ", description="Current EK meta DPS builds ")
         embed.add_field(name="Reaper (Power)", value="http://en.gw2skills.net/editor/?PS0AEd3lVwOYIsEWJeeXntbA-zRRYBRNnvYQBFSThQmVQFJgKDA-e ", inline=True)
         embed.add_field(name="Guardian (Burn)", value="http://en.gw2skills.net/editor/?PWwAYt/lFwQCbdstC3IO+KZrNA-zVRYcRNHPZQDjRiKoeK44iEE9W45TD-w ", inline=True)
@@ -38,7 +38,7 @@ async def on_message(message):
         embed.add_field(name="Renegade", value="http://en.gw2skills.net/editor/?PmiAIZldQIMHKi1QSsHCi9RgsASgFzU57G-zRJYnRF/ZkpUIdVgGvEhpHA-e ", inline=True)
         await self.bot.say(embed=embed)
 
-    if message.content == '!builds_support'
+    if message.content == '!builds_support':
         embed=discord.Embed(title="Support Builds", description="Current EK meta support builds", color=0x00ff00)
         embed.add_field(name="Firebrand", value="http://en.gw2skills.net/editor/?PWyAYl7lRwwYdMJmJmyXqvdA-zRJYjRNfZkZKUdF47hIANLtfAA-e", inline=False)
         embed.add_field(name="Scapper (Medic)", value="http://en.gw2skills.net/editor/?Pe0AIp7lNwcYPMP2Je6TntKA-zRJYjRN/ZkpSoaZgknl2PAA-e", inline=False)
