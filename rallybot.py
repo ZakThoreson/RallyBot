@@ -4,19 +4,15 @@ from dotenv import load_dotenv
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
-
 client = discord.Client()
 
 #commands setup
-bot = commands.Bot(command_prefix='!', description='A bot assiting EK')
 bot.remove_command('help')
 
 #confirm login
 @client.event
 async def on_ready():
     print('Logged in as {0.user}'.format(client))
-
-#Bot commands
 
 #Support Builds
 @client.event
@@ -48,6 +44,5 @@ async def on_message(message):
         embed.add_field(name="Scapper (Medic)", value="http://en.gw2skills.net/editor/?Pe0AIp7lNwcYPMP2Je6TntKA-zRJYjRN/ZkpSoaZgknl2PAA-e", inline=False)
         embed.add_field(name="Tempest", value=" http://gw2skills.net/editor/?PG0AgiZlRwSYNMGWJm2WrtdA-zVhYBRQIEdwYYnBfIBJByUF0tQwhXig0bp9DA-w", inline=False)
         await message.channel.send(embed=embed)
-
 
 client.run(TOKEN)
