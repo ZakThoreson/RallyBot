@@ -7,3 +7,4 @@ Running Todo list
 * WvW API
 * Build list
 * EK Roster vs Classes
+*  Guild Bank & Siege Count
