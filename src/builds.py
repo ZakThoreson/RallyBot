@@ -76,8 +76,9 @@ def builds(params):
     #Return all builds
     if(len(params) == 0):
         return searchBuilds('')
+        
     #Return all dps/damage builds
-    if(params[0].lower() == 'dps' or params[0].lower() == 'damage'):
+    elif(params[0].lower() == 'dps' or params[0].lower() == 'damage'):
         return dpsBuilds()
 
     #Return all support builds
