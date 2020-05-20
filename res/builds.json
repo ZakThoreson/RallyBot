@@ -1,0 +1,50 @@
+{
+    "Necromancer" : {
+        "Reaper" : {
+            "link" : "http://en.gw2skills.net/editor/?PS0AEd3lVwOYIsEWJeeXntbA-zRRYBRNnvYQBFSThQmVQFJgKDA-e",
+            "role" : "damage"
+        },
+        "Scourge" : {
+            "link" : "https://en.wikipedia.org/wiki/Lorem_ipsum",
+            "role" : "damage"
+        }
+    },
+    "Guardian" : {
+        "Burn Guardian" : {
+            "link" : "http://en.gw2skills.net/editor/?PWwAYt/lFwQCbdstC3IO+KZrNA-zVRYcRNHPZQDjRiKoeK44iEE9W45TD-w",
+            "role" : "damage"
+        },
+        "Firebrand" : {
+            "link" : "http://en.gw2skills.net/editor/?PWyAYl7lRwwYdMJmJmyXqvdA-zRJYjRNfZkZKUdF47hIANLtfAA-e",
+            "role" : "support"
+        }
+    },
+    "Warrior" : {
+        "Dragon Hunter" : {
+            "link" : "http://gw2skills.net/editor/?PWiAENlFwwYdMHWJO0X3tVA-zRJYiRFfh0SEkZJUbCo0hIANL8fGB-e",
+            "role" : "damage"
+        }
+    },
+    "Engineer" : {
+        "Bomb Scrapper" : {
+            "link" : "http://gw2skills.net/editor/?PWiAENlFwwYdMHWJO0X3tVA-zRJYiRFfh0SEkZJUbCo0hIANL8fGB-e",
+            "role" : "damage"
+        },
+        "Medic Scrapper" : {
+            "link" : "http://en.gw2skills.net/editor/?Pe0AIp7lNwcYPMP2Je6TntKA-zRJYjRN/ZkpSoaZgknl2PAA-e",
+            "role" : "support"
+        }
+    },
+    "Revenant" : {
+        "Renegade" : {
+            "link" : "http://en.gw2skills.net/editor/?PmiAIZldQIMHKi1QSsHCi9RgsASgFzU57G-zRJYnRF/ZkpUIdVgGvEhpHA-e",
+            "role" : "damage"
+        }
+    },
+    "Elementalist" : {
+        "Tempest" : {
+            "link" : "http://gw2skills.net/editor/?PG0AgiZlRwSYNMGWJm2WrtdA-zVhYBRQIEdwYYnBfIBJByUF0tQwhXig0bp9DA-w",
+            "role" : "support"
+        }
+    }
+}
