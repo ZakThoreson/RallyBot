@@ -80,7 +80,7 @@ async def on_message(message):
         
         if('Item' in response):
             if(response['Item']['command'] == 'register'):
-                embed = registration.registrationSwitch(message)
+                embed = await registration.registrationSwitch(message)
                 await message.channel.send(embed = embed)
         else:
             #Unknow command, why are you whispering the bot?
