@@ -6,12 +6,12 @@ import os
 from dotenv import load_dotenv
 import boto3
 #Components
-import help, builds, registration
+import help, builds, registration, util
 
 
 
 # Get the database
-db = boto3.resource('dynamodb', endpoint_url='http://localhost:8000')
+db = util.getDB()
 
 #Load the token from environmental variables, which must be set on the machine
 #before running the bot

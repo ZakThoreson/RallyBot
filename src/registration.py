@@ -12,7 +12,7 @@ import gw2Api
 #Components
 import util
 
-db = boto3.resource('dynamodb', endpoint_url='http://localhost:8000')
+db = util.getDB()
 members = db.Table('members')
 
 #Advances the registration step for the given id by 1

@@ -5,10 +5,21 @@ Utility functions
 import json
 import boto3
 
-db = boto3.resource('dynamodb', endpoint_url='http://localhost:8000')
-sessions = db.Table('sessions')
 configFile = './res/config.json'
 config = json.load(open(configFile))
+
+#Get the database depending on what environment we're in
+db = None
+if(config['environment'] == 'PROD'):
+    db = boto3.resource('dynamodb')
+else:
+    db = boto3.resource('dynamodb', endpoint_url='http://localhost:8000')
+
+sessions = db.Table('sessions')
+
+#return database
+def getDB():
+    return db
 
 #return full config file
 def getConfig():
