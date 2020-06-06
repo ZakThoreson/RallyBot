@@ -9,6 +9,9 @@ import asyncio
 import boto3
 import gw2Api
 
+#Components
+import util
+
 db = boto3.resource('dynamodb', endpoint_url='http://localhost:8000')
 members = db.Table('members')
 
@@ -36,6 +39,7 @@ def advanceStep(discordID):
             ':in_registrationStep' : registrationStep
         }
     )
+
 
 #Takes the provided api key, grabs data from it and saves to the db
 async def apiStep(discordID, apiKey):
@@ -111,15 +115,44 @@ async def apiStep(discordID, apiKey):
         }
     )
 
+    advanceStep(discordID)
+    retVal = 'API Successfully Verified!\nPlease select your main from the list of characters below:\n'
+    retVal += util.charactersToString(characters)
+    retVal += 'Respond with the name of your selection.'
+    return retVal
+
+
+async def setMainStep(discordID, selection):
+
+    #Get member information
     response = members.get_item(
         Key = {
             'id' : discordID
         }
     )
-    print(response['Item'])
 
+    characters = response['Item']['characters']
+
+    #Check if the selection is actually an int
+    if(not selection in characters):
+        retVal = 'Selection not found!\nPlease respond with the name of your main character from the list below:\n'
+        retVal += util.charactersToString(characters)
+        return retVal
     
+    #Set main
+    members.update_item(
+        Key = {
+            'id' : discordID
+        },
+        UpdateExpression = 'set mainCharacter = :in_mainCharacter',
+        ExpressionAttributeValues = {
+            ':in_mainCharacter' : selection,
+        }
+    )
 
+    advanceStep(discordID)
+    util.deleteSession(discordID)
+    return ('%s Selected\nRegistration Complete!' % (selection))
 
 #Register the user, occurs in multiple steps
 async def registrationSwitch(message):
@@ -169,10 +202,17 @@ async def registrationSwitch(message):
         #API step, save api key and character info
         description = await apiStep(discordID, message.content)
 
+    elif(registrationStep == 2):
+        description = await setMainStep(discordID, message.content)
+
+    elif(registrationStep == 3):
+        description = 'Registration already completed!'
+        util.deleteSession(discordID)
+
 
 
     #Retval Creation
-    embed=discord.Embed(title = 'Registration Step %d of 3' % (registrationStep),
+    embed=discord.Embed(title = 'Registration Step %d of 2' % (registrationStep),
         description = description, color = 0x00ff00)
 
     return embed
