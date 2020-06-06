@@ -1,7 +1,7 @@
 import boto3
 
 # Get the service resource.
-db = boto3.resource('dynamodb', endpoint_url='http://localhost:8000')
+db = boto3.resource('dynamodb')
 
 # Create a table to store command sessions
 db.create_table(
