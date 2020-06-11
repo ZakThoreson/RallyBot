@@ -51,7 +51,7 @@ def supportBuilds():
 
 def searchBuilds(search):
     #Create embed message and title it
-    embed=discord.Embed(title="Search Builds", description="Return builds related to: %s" % (search), color=0x00ff00)
+    embed=discord.Embed(title="Search Builds", description="Return builds related to: \'%s\'" % (search), color=0x00ff00)
     
     #loop over each class in the hashmap and add it to the message
     for profession in metaBuilds:
